@@ -1,25 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState, useRef} from "react";
+import {Form} from "./components/Form"
 
 function App() {
+  let test = useRef(1) 
+  // test {current : 1}
+  const [dummy , setDummy ]= useState(1)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+      <Form />
     </div>
   );
 }
 
 export default App;
+/*
+1. variable , save it own state
+2.change in variable , sholun't cause a re render  
+useRef.current.scrollIntoView({
+  behaviour:"smooth"
+}) -- read 
+
+<button onClick={()=>{
+        test.current = test.current+1
+        console.log(test.current)
+      }}> Increment </button>
+
+      <button onClick={()=>{
+        setDummy((r)=>r+1)
+        console.log(test)
+      }}>rerender </button>
+
+*/
