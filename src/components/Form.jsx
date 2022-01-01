@@ -5,6 +5,7 @@ export const Form =()=>{
        username:"",
        age:"",
    })
+   const [array,setArray] = useState([])
    const handleChange =(e)=>{
       //console.log(e.target.name , e,target.value)
       const {name, value} = e.target 
@@ -17,6 +18,7 @@ export const Form =()=>{
    const handleSubmit =(e)=>{
        e.preventDefault()
        console.log(form)
+       setArray([...array,form])
    }
     return (
         <form onSubmit={handleSubmit}>
